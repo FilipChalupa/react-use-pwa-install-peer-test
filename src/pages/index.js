@@ -1,4 +1,5 @@
 import * as React from "react"
+import { usePWAInstall } from "react-use-pwa-install"
 
 // styles
 const pageStyles = {
@@ -127,9 +128,12 @@ const links = [
 
 // markup
 const IndexPage = () => {
+  const install = usePWAInstall()
+
   return (
     <main style={pageStyles}>
       <title>Home Page</title>
+      {install && <button onClick={install}>Install</button>}
       <h1 style={headingStyles}>
         Congratulations
         <br />
